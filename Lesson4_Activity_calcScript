@@ -1,0 +1,58 @@
+--[[
+
+ * FILENAME :        	calcScript
+ * DESCRIPTION :     	CodeCreate Roblox Beginner Lesson 4 Activity
+ * 
+ * NOTES :
+ * 
+ * AUTHOR :    			Barry Feng   
+ * 
+ * START DATE :    		12 Jul 2020
+
+--]]
+
+--------------------- DO NOT CHANGE ---------------------
+
+local Players = game:GetService("Players")  
+local ReplicatedFirst = game:GetService("ReplicatedFirst")
+
+print("Started calcScript")
+
+local function playerAdded(player)
+	print("Player has entered: " .. player.Name)
+end
+
+Players.PlayerAdded:Connect(playerAdded)
+
+for _, player in ipairs(Players:GetPlayers()) do
+	playerAdded(player)
+	player.Chatted:Connect(function(msg)
+		local tokens = msg:split(" ")
+		msg_received(tokens)
+	end)
+end
+
+
+function msg_received(tokens)
+	local first = tokens[1]
+	local sign = tokens[2]
+	local second = tokens[3] 	
+	
+--------------------- DO NOT CHANGE ---------------------
+
+	-- Your code here! --
+	-- Let's implement a calculator which can either add, 
+	-- subtract or multiply the first and second variables!
+	-- After you're done, print the answer using print().
+	
+	if sign == "add" then
+		print(first + second)
+	elseif sign == "subtract" then
+		print(first - second)
+	elseif (sign == "multiply") then
+		print(first * second)
+	else
+		print("No answer")
+	end
+	
+end
