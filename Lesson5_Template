@@ -1,0 +1,102 @@
+--[[
+
+ * FILENAME :        	calcScriptTouch
+ * DESCRIPTION :     	CodeCreate Roblox Beginner Lesson 5 Activity
+ * 
+ * NOTES :
+ * 
+ * AUTHOR :    			Barry Feng   
+ * 
+ * START DATE :    		12 Jul 2020
+
+--]]
+
+-- YOUR CODE HERE --
+------------------------------------------------------
+
+
+
+------------------------------------------------------
+-- DO NOT TOUCH --
+
+local first = 0
+local second = 0
+local sign = "add"
+answer = 0
+
+function calculate(first, sign, second)
+	if sign == "add" then
+		answer = first + second
+	elseif sign == "subtract" then
+		answer = first - second
+	elseif sign == "multiply" then
+		answer = first * second
+	else
+		answer = 0
+	end
+	
+	print(first .. " " .. sign .. " " .. second .. " = " .. answer)
+end
+
+function saveOne()
+	if first == 0 then
+		first = 1
+	else 
+		second = 1
+		calculate(first, sign, second)
+	end
+end
+
+function saveTwo()
+	if first == 0 then
+		first = 2
+	else 
+		second = 2
+		calculate(first, sign, second)
+	end
+end
+
+function saveThree()
+	if first == 0 then
+		first = 3
+	else 
+		second = 3
+		calculate(first, sign, second)
+	end
+end
+ 
+function saveFour()
+	if first == 0 then
+		first = 4
+	else 
+		second = 4
+		calculate(first, sign, second)
+	end
+end
+
+function add()
+	sign = "add"
+end
+
+function subtract()
+	sign = "subtract"
+end
+
+function multiply()
+	sign = "multiply"
+end
+
+function clear()
+	first = 0
+	second = 0
+	sign = "add"
+end
+
+clickOne.MouseClick:connect(saveOne)
+clickTwo.MouseClick:connect(saveTwo)
+clickThree.MouseClick:connect(saveThree)
+clickFour.MouseClick:connect(saveFour)
+clickAdd.MouseClick:connect(add)
+clickSubtract.MouseClick:connect(subtract)
+clickMultiply.MouseClick:connect(multiply)
+clickClear.MouseClick:connect(clear)
